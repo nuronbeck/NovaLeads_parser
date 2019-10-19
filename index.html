@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Главное меню</title>
+	<style>
+		body
+		{
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(#e66465, #9198e5);
+			background-repeat: no-repeat;
+			height: 100vh;
+			box-sizing: border-box;
+			font-family: Arial;
+		}
+		.container
+		{
+			width: 60%;
+			margin: 0 auto;
+			padding-top: 40vh;
+		}
+		.steps
+		{
+			height: 50px;
+			text-align: center;
+		}
+		.steps a
+		{
+			text-decoration: none;
+		}
+		.steps a button
+		{
+			cursor: pointer;
+			border: none;
+			color: #000;
+			background-color: #44de18;
+			padding: 10px 30px;
+			width: 220px;
+			font-size: 1.3em;
+			border-radius: 7px;
+			transition: .2s;
+		}
+		.steps a button:hover
+		{
+			background-color: #74f00e;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="steps"><a href="step1.php"><button>Этап №1 и №2</button></a></div>
+		<div class="steps"><a href="step3.php"><button>Этап №3</button></a></div>
+	</div>
+</body>
+</html>
