@@ -7,19 +7,13 @@
 	// Пока матчи для парсинга есть перебор матчей работает по итератору $pageNumber
 	// Пример GET запроса матчей для добавления на сайте после скроллинга
 	// https://www.marathonbet.ru/su/popular/Football?page=[тут конкатенируем $pageNumber]&pageAction=getPage&_=1571422775084
-	$pageNumber = 0;
+	$pageNumber = (int)$_GET["page_number"];
 
 	if ($pageNumber == 0)
 	{
 		// Очищяем таблицу `game`
 		truncateTable('game');
-	}
-	
-	if (isset($_GET["page_number"]))
-	{
-		$pageNumber = (int)$_GET["page_number"];
-	}
-	
+	}	
 
 	// Делаем на страницу ФУТБОЛА GET запрос
 	$getDataLink = "https://www.marathonbet.ru/su/popular/Football?page=".$pageNumber."&pageAction=getPage&_=1571422775084";
@@ -92,43 +86,11 @@
 			echo "<hr>";
 		}
 		*/
-
-
-		// Переходим на след страницу GET запроса
-		$pageNumber += 1;
-
-		$nextPage = $_SERVER['PHP_SELF']."?page_number=".$pageNumber;
 	}
 	else
 	{ 
-		$nextPage = __DIR__."step3.php";
-		//echo "ПАРСИНГ ЗАВЕРШЁН УСПЕШНО!";
+		echo "ПАРСИНГ ЗАВЕРШЁН УСПЕШНО!";
 	}
 
 
-
-
  ?>
-
-
-
-
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Не закрывайте окно! Идет загрузка данных...</title>
- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- 	<script>
- 		$(document).ready(function()
- 		{
- 			setTimeout(function() {
-			  window.location.href = "<?php echo $nextPage; ?>";
-			}, 5000);
- 		});
- 	</script>
- </head>
- <body>
- 	
- </body>
- </html>
