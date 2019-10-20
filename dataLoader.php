@@ -55,7 +55,7 @@
 					echo $_SERVER['PHP_SELF']."?page_number=".$pageNumber;
 				}
 	  		?>";
-		}, 3000);
+		}, 10000);
 
 	});
  </script>
