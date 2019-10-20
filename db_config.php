@@ -1,5 +1,5 @@
 <?php 
-	$connection = mysqli_connect("eu-cdbr-west-02.cleardb.net", "b02a5ef2a06370", "90106657", "heroku_e2596b9a4c8c9fd");
+	$connection = mysqli_connect("remotemysql.com", "mnII3NKS1G", "KdP0Bey3AW", "mnII3NKS1G");
 
 	if ($connection == false)
 	{
